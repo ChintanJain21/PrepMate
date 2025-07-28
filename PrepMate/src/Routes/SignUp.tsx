@@ -3,7 +3,11 @@ import { SignUp } from "@clerk/clerk-react"
 
 const SignUpPage = () => {
   return (
-    <SignUp path='/signup'/>
+   <SignUp
+  path="/signup"
+  routing="path"
+  signInUrl="/signin" 
+/>
   )
 }
 
