@@ -7,6 +7,9 @@ import SignInPage from './Routes/SignIn'
 import SignUpPage from './Routes/SignUp'
 import ProtectRoutes from './layouts/ProtectedRoutes'
 import MainLayoutPage from './layouts/MainLayout'
+import { Generate } from './components/Generate'
+import Dashboard from './Routes/Dashboard'
+import { CreateEditPage } from './Routes/CreateEditPage'
 
 const App = () => {
   return (
@@ -26,6 +29,10 @@ const App = () => {
       <Route element={<ProtectRoutes>
         <MainLayoutPage/>
       </ProtectRoutes>}>
+      <Route element={<Generate/>}path='/generate'>
+       <Route index element={<Dashboard/>} />
+       <Route path=":interviewId" element={<CreateEditPage />} />
+      </Route>
 
       </Route>
      
